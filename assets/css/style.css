@@ -1,0 +1,1252 @@
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #fff;
+  background: #000;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Jost", sans-serif;
+}
+
+/*--------------------------------------------------------------
+# Back to top button
+--------------------------------------------------------------*/
+.back-to-top {
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  right: 15px;
+  bottom: 15px;
+  z-index: 996;
+  width: 70px;
+  height: 70px;
+  border-radius: 50px;
+  transition: all 0.4s;
+  background-image: url(../img/download.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.back-to-top i {
+  font-size: 24px;
+  color: #fff;
+  line-height: 0;
+}
+
+.back-to-top.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+@media (max-width: 575px) {
+}
+
+@media (max-width: 768px) {
+}
+
+@media (max-width: 991px) {
+}
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+#header {
+  transition: all 0.5s;
+  z-index: 997;
+  padding: 15px 0;
+}
+
+#header.header-scrolled,
+#header.header-inner-pages {
+  background: #000;
+}
+
+#header .logo {
+  font-size: 30px;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+#header .logo a {
+  color: #fff;
+}
+
+#header .logo img {
+  max-height: 40px;
+}
+
+.dropdown button {
+  background-color: #253849;
+  min-width: 130px;
+  width: max-content;
+  height: 40px;
+  border-radius: 5px;
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  justify-content: space-evenly;
+}
+.dropdown button img {
+  margin: 0 5px 0 0;
+}
+.dropdown button img,
+.dropdown-content li img {
+  width: 28px;
+}
+.dropdown button,
+.dropdown-content li {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-family: "Open Sans", sans-serif;
+  font-family: "Noto Sans JP", sans-serif;
+  font-family: "Noto Sans Arabic", sans-serif;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 500;
+}
+.arrow-down {
+  width: 0;
+  height: 0;
+  display: inline-block;
+  vertical-align: middle;
+  border-style: solid;
+  border-width: 4px 4px 0 4px;
+  border-color: #fff transparent transparent transparent;
+  margin: 0 0 0 5px;
+}
+
+.dropdown button:hover {
+  cursor: pointer;
+  background-color: #3c5b77;
+}
+
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+/**
+* Desktop Navigation 
+*/
+.navbar {
+  padding: 0;
+}
+
+.navbar ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+.navbar li {
+  position: relative;
+}
+
+.navbar a,
+.navbar a:focus {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0 11px 40px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  white-space: nowrap;
+  transition: 0.3s;
+}
+
+.navbar a i,
+.navbar a:focus i {
+  font-size: 12px;
+  margin-left: 5px;
+  line-height: 0px;
+  font-weight: 100;
+}
+
+i.fa-brands.fa-x-twitter {
+  font-size: 30px;
+  font-weight: 100;
+}
+
+i.fa-brands.fa-telegram {
+  font-size: 30px;
+  font-weight: 100;
+}
+
+.navbar .getstarted,
+.navbar .getstarted:focus {
+  padding: 15px 35px;
+  margin-left: 30px;
+  border-radius: 14px;
+  color: #f96d1f;
+  font-size: 14px;
+  border: 1px solid #f96d1f;
+  font-weight: 700;
+  box-shadow: 0px 0px 13px 0px #f96d1f;
+}
+@media (max-width: 575px) {
+  .navbar .getstarted,
+  .navbar .getstarted:focus {
+    display: none;
+  }
+}
+
+a.getstarted.scrollto:hover {
+  color: #f96d1f;
+}
+
+.navbar .dropdown ul {
+  display: block;
+  position: absolute;
+  right: 0px;
+  top: calc(100% + 30px);
+  margin: 0;
+  padding: 10px 0;
+  z-index: 99;
+  opacity: 0;
+  visibility: hidden;
+  background: #0d2b20;
+  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+  transition: 0.3s;
+  border-radius: 4px;
+}
+
+.navbar .dropdown ul li {
+  min-width: 200px;
+}
+
+.navbar .dropdown ul a {
+  padding: 15px 12px;
+  font-size: 14px;
+  text-transform: none;
+  font-weight: 500;
+  color: #fff;
+}
+
+.navbar .dropdown ul a i {
+  font-size: 12px;
+}
+
+.navbar .dropdown ul a:hover,
+.navbar .dropdown ul .active:hover,
+.navbar .dropdown ul li:hover > a {
+  color: #1ef6a9;
+}
+
+.navbar .dropdown:hover > ul {
+  opacity: 1;
+  top: 100%;
+  visibility: visible;
+}
+
+.navbar .dropdown .dropdown ul {
+  top: 0;
+  left: calc(100% - 30px);
+  visibility: hidden;
+}
+
+.navbar .dropdown .dropdown:hover > ul {
+  opacity: 1;
+  top: 0;
+  left: 100%;
+  visibility: visible;
+}
+
+.selectpicker {
+  margin-left: 20px;
+  border: none;
+  border-radius: 50px;
+  padding: 5px 5px;
+  background: #004d2f;
+  color: #fff;
+  font-weight: 600;
+}
+
+@media (max-width: 1366px) {
+  .navbar .dropdown .dropdown ul {
+    left: -90%;
+  }
+
+  .navbar .dropdown .dropdown:hover > ul {
+    left: -100%;
+  }
+}
+
+/**
+* Mobile Navigation 
+*/
+.mobile-nav-toggle {
+  color: #fff;
+  font-size: 28px;
+  cursor: pointer;
+  display: none;
+  line-height: 0;
+  transition: 0.5s;
+}
+
+.mobile-nav-toggle.bi-x {
+  color: #fff;
+}
+
+@media (max-width: 991px) {
+  .mobile-nav-toggle {
+    display: block;
+  }
+
+  .navbar ul {
+    display: none;
+  }
+}
+
+.navbar-mobile {
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(40, 58, 90, 0.9);
+  transition: 0.3s;
+  z-index: 999;
+}
+
+.navbar-mobile .mobile-nav-toggle {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.navbar-mobile ul {
+  display: block;
+  position: absolute;
+  top: 55px;
+  right: 15px;
+  bottom: 15px;
+  left: 15px;
+  padding: 10px 0;
+  border-radius: 10px;
+  background-color: #004d2f;
+  overflow-y: auto;
+  transition: 0.3s;
+}
+
+.navbar-mobile a,
+.navbar-mobile a:focus {
+  padding: 17px 20px;
+  font-size: 15px;
+}
+
+.navbar-mobile .dropdown ul {
+  position: static;
+  display: none;
+  margin: 10px 20px;
+  padding: 10px 0;
+  z-index: 99;
+  opacity: 1;
+  visibility: visible;
+  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+}
+
+.navbar-mobile .dropdown ul li {
+  min-width: 200px;
+}
+
+.navbar-mobile .dropdown ul a {
+  padding: 10px 20px;
+}
+
+.navbar-mobile .dropdown ul a i {
+  font-size: 12px;
+}
+
+.navbar-mobile .dropdown ul a:hover,
+.navbar-mobile .dropdown ul .active:hover,
+.navbar-mobile .dropdown ul li:hover > a {
+  color: #47b2e4;
+}
+
+.navbar-mobile .dropdown > .dropdown-active {
+  display: block;
+  visibility: visible !important;
+}
+
+/*--------------------------------------------------------------
+# Sections General
+--------------------------------------------------------------*/
+section {
+  padding: 40px 0;
+  overflow: hidden;
+}
+
+.section-bg {
+  background-color: #000;
+}
+
+.section-title {
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.section-title h2 {
+  font-size: 45px;
+  font-weight: 100;
+  text-transform: uppercase;
+}
+
+.section-title p {
+  margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+#bitcoin-hero {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  padding: 140px 0 160px 0;
+  background-image: url(../img/bg_mesh.svg);
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-color: #004d2f30;
+}
+
+#bitcoin-hero h2 {
+  font-size: 18px;
+  background: #004d2f4a;
+  padding: 10px 21px;
+  border-radius: 50px;
+  color: #1ef6a9;
+  font-weight: 400;
+  width: 440px;
+  margin-bottom: 30px;
+}
+
+#bitcoin-hero h5 {
+  font-size: 52px;
+  font-weight: 200;
+  letter-spacing: 1px;
+}
+
+span.color-chnge {
+  color: #1ef6a9;
+}
+
+#bitcoin-hero p {
+  color: #c5c5c5;
+  margin-bottom: 50px;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+#bitcoin-hero .paper-btn {
+  font-weight: 500;
+  font-size: 20px;
+  padding: 8px 22px;
+  border-radius: 15px;
+  color: #1ef6a9;
+  background: #004d2f;
+  display: inline-block;
+  border: 1px solid #1ef6a970;
+}
+
+#bitcoin-hero .audit-btn {
+  font-weight: 600;
+  font-size: 20px;
+  padding: 8px 22px;
+  border-radius: 15px;
+  display: inline-block;
+  border: 1px solid #ffffff75;
+  margin-left: 20px;
+}
+
+#bitcoin-hero .audit-btn:hover {
+  box-shadow: #1f976c80 0 0 20px;
+  transform: scale(1.03);
+  background: #0d2b20;
+  color: #1ff9ab;
+}
+
+#bitcoin-hero .download-btn:hover {
+  background: #5777ba;
+}
+
+#bitcoin-hero .download-btn i {
+  font-size: 20px;
+  position: absolute;
+  left: 18px;
+  top: 8.5px;
+}
+
+#bitcoin-hero .download-btn + .download-btn {
+  margin-left: 20px;
+}
+
+.Wallet-box {
+  text-align: center;
+  border: 1px solid #fff3;
+  border-radius: 15px;
+  padding: 60px 15px;
+  margin-left: 65px;
+}
+
+.Wallet-box p {
+  margin-bottom: 10px !important;
+  font-size: 15px !important;
+  color: #fff !important;
+  letter-spacing: 1px;
+}
+
+.Wallet-box i {
+  color: #1ef6a9;
+}
+
+.Wallet-box h6 {
+  font-size: 12px;
+}
+
+a.wallet-btn {
+  background: #004d2f;
+  padding: 10px 118px;
+  border-radius: 15px;
+  color: #1ff9ab;
+  border: 1px solid #1ff9ab;
+}
+
+a.wallet-btn:hover {
+  box-shadow: #1f976c80 0 0 20px;
+  transform: scale(1.03);
+  background: #0d2b20;
+  color: #1ff9ab;
+}
+
+.font-30.font-sm-36.fw-bold {
+  font-size: 40px;
+}
+
+@media (max-width: 991px) {
+  #bitcoin-hero {
+    text-align: center;
+  }
+
+  #bitcoin-hero .download-btn + .download-btn {
+    margin: 0 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  #bitcoin-hero h1 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  #bitcoin-hero h2 {
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 575px) {
+  .Wallet-box {
+    margin-left: 0px;
+  }
+  a.wallet-btn {
+    padding: 10px 15px;
+  }
+  #bitcoin-hero h2 {
+    width: 100%;
+  }
+  .font-30.font-sm-36.fw-bold {
+    font-size: 25px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Green Staking
+--------------------------------------------------------------*/
+.green-staking {
+  text-align: center;
+}
+
+.staking-content {
+  padding: 0 205px;
+}
+
+.staking-content h4 {
+  font-size: 45px;
+  font-weight: 100;
+}
+
+.staking-content p {
+  color: #ffffffba;
+  margin-bottom: 70px;
+}
+
+.staking-gif img {
+  width: 70%;
+  margin-bottom: 70px;
+}
+
+a.stake-btn {
+  padding: 15px 35px;
+  border-radius: 14px;
+  color: #f96d1f;
+  font-size: 15px;
+  border: 1px solid #f96d1f;
+  font-weight: 700;
+  box-shadow: 0px 0px 13px 0px #f96d1f;
+}
+
+@media (max-width: 575px) {
+  .staking-content {
+    padding: 0px;
+  }
+  .staking-gif img {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+}
+
+@media (max-width: 991px) {
+}
+
+/*--------------------------------------------------------------
+# Featured-In
+--------------------------------------------------------------*/
+.bitcoin-featuredin {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.bitcoin-featuredin h4 {
+  font-weight: 400;
+  font-size: 25px;
+  margin-bottom: 30px;
+}
+
+.bitcoin-featuredin img {
+  margin-left: 60px;
+}
+
+@media (max-width: 575px) {
+}
+
+@media (max-width: 768px) {
+}
+
+@media (max-width: 991px) {
+}
+
+/*--------------------------------------------------------------
+# what's bitcoin
+--------------------------------------------------------------*/
+.whats-bitcoin h6 {
+  font-size: 50px;
+  text-align: center;
+  font-weight: 400;
+  margin-bottom: 70px;
+}
+
+.content {
+  border-radius: 16px;
+  padding: 42px;
+  background: linear-gradient(
+    105deg,
+    rgba(31, 249, 171, 0.2) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+.content h5 {
+  font-size: 35px;
+  font-weight: 100;
+}
+
+.content p {
+  opacity: 0.8;
+}
+
+.content-earn {
+  padding: 42px;
+}
+
+.content-earn h3 {
+  font-size: 35px;
+  font-weight: 100;
+}
+
+.content-earn p {
+  opacity: 0.8;
+  margin-bottom: 40px;
+}
+
+a.works-btn {
+  border: 1px solid #ffffff45;
+  border-radius: 15px;
+  padding: 12px;
+  box-shadow: 0px 0px 7px 0px #ffffff42;
+}
+
+.content img {
+  width: 200px;
+}
+
+.mid-img img {
+  width: 200px;
+}
+
+.about-list li {
+  margin-bottom: 20px;
+  font-size: 15px;
+}
+
+.text-light-grey {
+  color: #ffffff94;
+}
+
+.about-list li h3 {
+  font-size: 15px;
+  margin-top: 10px;
+}
+
+.about-list.active {
+  background-color: #0b1511;
+  padding: 0 17px;
+  border: 1px solid rgba(31, 249, 171, 0.1);
+  border-radius: 10px;
+}
+
+.about-box {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  background: linear-gradient(105deg, rgb(11, 32, 25), hsla(0, 0%, 100%, 0));
+  padding: 40px 20px;
+  border-radius: 20px;
+  border: 1px solid rgba(31, 249, 171, 0.5);
+  width: 100%;
+  margin-top: 30px;
+}
+
+.about-list:nth-child(3),
+.about-list:nth-child(4) {
+  padding-right: 20px;
+  border-right: 2px solid rgba(31, 249, 171, 0.1);
+}
+
+@media (max-width: 575px) {
+  .whats-bitcoin h6 {
+    font-size: 42px;
+  }
+  .mid-img img {
+    width: 320px;
+  }
+  .about-box {
+    display: inline-block;
+  }
+}
+
+@media (max-width: 768px) {
+}
+
+@media (max-width: 991px) {
+}
+
+/*--------------------------------------------------------------
+# Massive bitcoin
+--------------------------------------------------------------*/
+.Massive-bitcoin {
+  padding: 80px 0;
+  background: linear-gradient(
+      180deg,
+      rgba(31, 249, 171, 0),
+      rgba(31, 249, 171, 0.04)
+    ),
+    url(../img/bg_mesh.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50%;
+}
+
+.Massive-bitcoin h6 {
+  font-size: 58px;
+  font-weight: 100;
+  text-align: center;
+}
+
+.Massive-bitcoin p {
+  font-size: 16px;
+  opacity: 0.8;
+  margin-bottom: 75px;
+  text-align: center;
+}
+
+.massive-content {
+  border-radius: 16px;
+  background: linear-gradient(
+    105deg,
+    rgba(31, 249, 171, 0.1),
+    hsla(0, 0%, 100%, 0)
+  );
+  padding: 24px;
+}
+
+.massive-content p {
+  text-align: left;
+}
+
+.maasive-mid-img img {
+  width: 135px;
+}
+
+@media (max-width: 575px) {
+  .maasive-mid-img img {
+    margin-left: 85px;
+  }
+}
+
+@media (max-width: 768px) {
+}
+
+@media (max-width: 991px) {
+}
+
+/*--------------------------------------------------------------
+# Tokenomics 
+--------------------------------------------------------------*/
+.tokenomics h3 {
+  text-align: center;
+  font-size: 50px;
+  font-weight: 100;
+  margin-bottom: 50px;
+}
+
+h4.font-22 {
+  font-size: 22px;
+  opacity: 0.9;
+}
+
+p.font-14 {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+img.tokenomics-img {
+  width: 100%;
+  margin-left: 50px;
+}
+
+@media (max-width: 575px) {
+  img.tokenomics-img {
+    margin-left: 0px;
+  }
+}
+
+@media (max-width: 768px) {
+}
+
+@media (max-width: 991px) {
+}
+
+/*--------------------------------------------------------------
+# Bitcoin Roadmap 
+--------------------------------------------------------------*/
+.bitcoin-roadmaps {
+  background-image: url(../img/bg_mesh.svg);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+}
+
+.bitcoin-roadmaps h2 {
+  text-align: center;
+  font-size: 50px;
+  font-weight: 100;
+  margin-bottom: 50px;
+}
+
+.map-info .pre-title {
+  font-size: 40px;
+  letter-spacing: -1px;
+}
+
+.map-info p {
+  line-height: 22.5px;
+  font-size: 14px;
+}
+
+h4.mb-3.fw-normal {
+  font-size: 20px;
+}
+
+.map-info {
+  background: url(../img/map-bg.svg) no-repeat 0 0 / cover;
+  border-radius: 12px;
+  overflow: hidden;
+  padding: 30px;
+}
+
+@media (max-width: 575px) {
+}
+
+@media (max-width: 768px) {
+}
+
+@media (max-width: 991px) {
+}
+
+/*--------------------------------------------------------------
+# how-buy
+--------------------------------------------------------------*/
+.how-buy {
+  padding: 80px 0;
+}
+
+.how-buy h2.heading.text-white.fw-light.mb-4.text-center.text-lg-start {
+  font-size: 50px;
+}
+
+p.font-16.desc {
+  opacity: 0.8;
+  font-size: 16px;
+  padding: 0px 60px 0px 0px;
+}
+
+.how-to-buy-info p {
+  opacity: 0.5;
+}
+
+@media (max-width: 575px) {
+  .how-to-buy-info {
+    margin-top: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+}
+
+@media (max-width: 991px) {
+}
+/*--------------------------------------------------------------
+# Frequently Asked Questions
+--------------------------------------------------------------*/
+.faq-bitcoin {
+  padding: 140px 150px;
+}
+
+.faq-bitcoin .faq-list {
+  padding: 0 100px;
+}
+
+.faq-bitcoin .faq-list ul {
+  padding: 0;
+  list-style: none;
+}
+
+.faq-bitcoin .faq-list li + li {
+  margin-top: 15px;
+}
+
+.faq-bitcoin .faq-list li {
+  padding: 20px;
+  background: #141414;
+  border-radius: 15px;
+  position: relative;
+  color: #fff;
+  margin-bottom: 35px;
+}
+
+.faq-bitcoin .faq-list a {
+  display: block;
+  position: relative;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 600;
+  outline: none;
+  cursor: pointer;
+  text-align: start;
+  margin-bottom: 10px;
+}
+
+.faq-bitcoin .faq-list .icon-help {
+  font-size: 24px;
+  position: absolute;
+  right: 0;
+  left: 20px;
+  color: #47b2e4;
+}
+
+.faq-bitcoin .faq-list .icon-show,
+.faq-bitcoin .faq-list .icon-close {
+  font-size: 24px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: none;
+}
+@media (max-width: 575px) {
+  .faq-bitcoin .faq-list .icon-show,
+  .faq-bitcoin .faq-list .icon-close {
+    right: -21px;
+  }
+}
+.faq-bitcoin .faq-list p {
+  margin-bottom: 0;
+  padding: 10px 0 0 0;
+  text-align: start;
+  font-size: 16px;
+  opacity: 0.8;
+}
+
+.faq-bitcoin .faq-list .icon-show {
+  display: none;
+}
+
+.faq-bitcoin .faq-list a.collapsed {
+  transition: 0.3s;
+  text-align: start;
+  font-weight: 600;
+}
+
+.faq-bitcoin .faq-list a.collapsed .icon-show {
+  display: none;
+}
+
+.faq-bitcoin .faq-list a.collapsed .icon-close {
+  display: none;
+}
+
+a.faq-stake-btn {
+  padding: 15px 35px;
+  border-radius: 14px;
+  color: #f96d1f;
+  font-size: 15px;
+  border: 1px solid #f96d1f;
+  font-weight: 700;
+  box-shadow: 0px 0px 13px 0px #f96d1f;
+  margin-left: 38%;
+}
+
+@media (max-width: 1200px) {
+  .faq-bitcoin .faq-list {
+    padding: 0;
+  }
+}
+
+@media (max-width: 768px) {
+}
+
+@media (max-width: 575px) {
+  .faq-bitcoin {
+    padding: 0px;
+  }
+  a.faq-stake-btn {
+    display: none;
+  }
+}
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+#footer {
+  background-image: url(../img/footer-bg.webp);
+  background-position: 100% 97%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.footer .copyright {
+  color: #d6d6d6;
+}
+
+.footer .disclaimer {
+  margin-top: 100px;
+}
+
+.footer .disclaimer p {
+  font-weight: 300;
+  line-height: 150%;
+  letter-spacing: 0.4px;
+  color: #d6d6d6;
+  opacity: 0.8;
+  font-size: 14px;
+}
+
+@media (max-width: 575px) {
+}
+
+@media (max-width: 768px) {
+}
+
+@media (max-width: 991px) {
+}
+
+/*---------------------------------------------- 
+# Staking Page Css  
+------------------------------------------------*/
+.dashboard {
+  padding: 150px 0px;
+}
+
+h2.dasboard-headtext {
+  font-size: 60px;
+  color: #1ef6a9;
+}
+
+p.font-16.sub-head {
+  color: #1ef6a9;
+}
+
+.dashboard .box-wrap {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+.dashboard .box-wrap .box {
+  padding: 15px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  border-radius: 20px;
+  border: 1px solid #929292;
+  background-color: #0d2b20;
+  color: #1ef6a9;
+  box-shadow: 2px 4px 12px #00000014;
+  width: 100%;
+  margin: 0 auto;
+}
+
+span.title-dashboard {
+  font-size: 15px;
+}
+
+span.d-inline-block.ms-2.font-12.fw-bold {
+  font-size: 12px;
+}
+
+.box h2 {
+  font-size: 30px;
+}
+
+.dashboard .wallet-btn {
+  padding: 8px 12px;
+}
+
+.dashboard .stake-btn {
+  padding: 12px 15px;
+}
+
+img.chart-img {
+  width: 100%;
+  border: 1px solid #ffffffb0;
+  border-radius: 30px;
+}
+
+img.loading-img {
+  width: 260px;
+  padding: 95px 0px;
+  margin-left: 80px;
+}
+
+@media (max-width: 575px) {
+  .dashboard {
+    padding: 65px 0;
+  }
+  .dashboard .box-wrap .box {
+    display: none;
+  }
+  img.loading-img {
+    width: 245px;
+    padding: 50px 0px;
+    margin-left: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+}
+
+@media (max-width: 991px) {
+}
+
+/* -----------------------------------
+# Media Page Css
+------------------------------------- */
+.media-videos {
+  padding: 120px 0px;
+  text-align: center;
+}
+
+.videos-adjust {
+  text-align: left;
+}
+
+.videos-adjust h3 {
+  font-size: 15px;
+  font-weight: 100;
+}
+
+.videos-adjust p {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.article h2 {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+img.article-img {
+  background: #fff;
+  padding: 50px;
+  max-width: 100%;
+  height: 250px;
+  border-radius: 15px;
+  object-fit: scale-down;
+}
+
+.article-content h3 {
+  font-size: 15px;
+  margin-top: 10px;
+}
+
+.article-content p {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 40px;
+}
+
+@media (max-width: 575px) {
+}
